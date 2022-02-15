@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+    <h2>localStorage</h2>
+    <button onclick="saveData()">add</button>
+    <button onclick="getData()">get</button>
+    <button onclick="removeData()">remove</button>
+    <button onclick="clearAllData()">clearAll</button>
+    <script type="text/javascript">
+        var obj = {
+            name: 'Ann',
+            age: 23
+        }
+
+        function saveData() {
+            localStorage.setItem('msg', 'hello')
+            localStorage.setItem('msg1', 666)
+            localStorage.setItem('msg1', 'updated666')
+            localStorage.setItem('msg2', JSON.stringify(obj))
+
+        }
+
+        function getData() {
+            localStorage.getItem('msg2')
+            const res = localStorage.getItem('msg2')
+            console.log(localStorage.getItem('msg'))
+            console.log(JSON.parse(res))
+        }
+
+        function removeData() {
+            localStorage.removeItem('msg1')
+        }
+        // clear 后访问返回null
+        function clearAllData() {
+            localStorage.clear()
+        }
+    </script>
+</body>
+
+</html>
